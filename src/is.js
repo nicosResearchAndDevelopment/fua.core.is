@@ -1,4 +1,6 @@
-const is = {};
+const
+    util = require('./util.js'),
+    is = {};
 
 is.boolean = require('./is.boolean.js');
 is.number = require('./is.number.js');
@@ -65,11 +67,5 @@ is.buffer = function isBuffer(value) {
     return Buffer.isBuffer(value);
 };
 
+util.sealModule(is);
 module.exports = is;
-
-(function seal(target) {
-    Object.freeze(target);
-    for (const child of Object.values(target)) {
-        if (child instanceof Object) seal(child);
-    }
-})(module.exports);
