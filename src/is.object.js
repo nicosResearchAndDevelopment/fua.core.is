@@ -1,33 +1,25 @@
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is object}
  */
-const isObject = function isObject(value) {
-    return value && typeof value === 'object';
-};
+const isObject = (value) => value && typeof value === 'object';
 
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is object}
  */
-isObject.nonempty = function isNonEmptyObject(value) {
-    return isObject(value) && Object.keys(value).length > 0;
-};
+isObject.nonempty = (value) => isObject(value) && Object.keys(value).length > 0;
 
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is object}
  */
-isObject.iterable = function isIterableObject(value) {
-    return isObject(value) && typeof value[Symbol.iterator] === 'function';
-};
+isObject.iterable = (value) => isObject(value) && typeof value[Symbol.iterator] === 'function';
 
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is object}
  */
-isObject.instance = function isObjectInstance(value) {
-    return value instanceof Object;
-};
+isObject.instance = (value) => value instanceof Object;
 
 module.exports = isObject;

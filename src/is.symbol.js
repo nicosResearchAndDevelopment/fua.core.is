@@ -1,19 +1,15 @@
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is symbol}
  */
-const isSymbol = function isSymbol(value) {
-    return typeof value === 'symbol';
-};
+const isSymbol = (value) => typeof value === 'symbol';
 
 const _nativeSymbols = Reflect.ownKeys(Symbol).map(key => Symbol[key]);
 
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is symbol}
  */
-isSymbol.native = function isNativeSymbol(value) {
-    return isSymbol(value) && _nativeSymbols.includes(value);
-};
+isSymbol.native = (value) => isSymbol(value) && _nativeSymbols.includes(value);
 
 module.exports = isSymbol;

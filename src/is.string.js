@@ -1,17 +1,19 @@
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is string}
  */
-const isString = function isString(value) {
-    return typeof value === 'string';
-};
+const isString = (value) => typeof value === 'string';
 
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is string}
  */
-isString.nonempty = function isNonEmptyString(value) {
-    return isString(value) && value.length > 0;
-};
+isString.nonempty = (value) => isString(value) && value.length > 0;
+
+/**
+ * @param {unknown} value
+ * @returns {value is string}
+ */
+isString.token = (value) => isString(value) && /^\S+$/.test(value);
 
 module.exports = isString;

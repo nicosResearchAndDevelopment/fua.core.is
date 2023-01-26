@@ -1,41 +1,31 @@
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is boolean}
  */
-const isBoolean = function isBoolean(value) {
-    return typeof value === 'boolean';
-};
+const isBoolean = (value) => typeof value === 'boolean';
 
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is boolean}
  */
-isBoolean.true = function isTrue(value) {
-    return value === true;
-};
+isBoolean.true = (value) => value === true;
 
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is any}
  */
-isBoolean.truthy = function isTruthy(value) {
-    return !!value;
-};
+isBoolean.truthy = (value) => !!value;
 
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is boolean}
  */
-isBoolean.false = function isFalse(value) {
-    return value === false;
-};
+isBoolean.false = (value) => value === false;
 
 /**
- * @param {any} value
+ * @param {unknown} value
  * @returns {value is null}
  */
-isBoolean.falsy = function isFalsy(value) {
-    return !value;
-};
+isBoolean.falsy = (value) => !value;
 
 module.exports = isBoolean;

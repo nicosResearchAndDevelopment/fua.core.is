@@ -12,60 +12,52 @@ is.array = require('./is.array.js');
 is.typedarray = require('./is.typedarray.js');
 
 /**
- * @param {any} value
- * @returns {boolean}
+ * @param {unknown} value
+ * @returns {value is undefined}
  */
-is.undefined = function isUndefined(value) {
-    return value === undefined;
-};
+is.undefined = (value) => value === undefined;
 
 /**
- * @param {any} value
- * @returns {boolean}
+ * @param {unknown} value
+ * @returns {value is !undefined}
  */
-is.defined = function isDefined(value) {
-    return !is.undefined(value);
-};
+is.defined = (value) => !is.undefined(value);
 
 /**
- * @param {any} value
- * @returns {boolean}
+ * @param {unknown} value
+ * @returns {value is null}
  */
-is.null = function isNull(value) {
-    return (value ?? null) === null;
-};
+is.null = (value) => (value ?? null) === null;
 
 /**
- * @param {any} value
- * @returns {boolean}
+ * @param {unknown} value
+ * @returns {value is !null}
  */
-is.notnull = function isNotNull(value) {
-    return !is.null(value);
-};
+is.notnull = (value) => !is.null(value);
 
 /**
- * @param {any} value
- * @returns {boolean}
+ * @param {unknown} value
+ * @returns {value is boolean | number | string}
  */
-is.date = function isDate(value) {
-    return value instanceof Date;
-};
+is.primitive = (value) => is.boolean(value) || is.number(value) || is.string(value);
 
 /**
- * @param {any} value
- * @returns {boolean}
+ * @param {unknown} value
+ * @returns {value is Date}
  */
-is.error = function isError(value) {
-    return value instanceof Error;
-};
+is.date = (value) => value instanceof Date;
 
 /**
- * @param {any} value
- * @returns {boolean}
+ * @param {unknown} value
+ * @returns {value is Error}
  */
-is.buffer = function isBuffer(value) {
-    return Buffer.isBuffer(value);
-};
+is.error = (value) => value instanceof Error;
+
+/**
+ * @param {unknown} value
+ * @returns {value is Buffer}
+ */
+is.buffer = (value) => Buffer.isBuffer(value);
 
 util.sealModule(is);
 module.exports = is;
