@@ -22,4 +22,12 @@ isObject.iterable = (value) => isObject(value) && typeof value[Symbol.iterator] 
  */
 isObject.instance = (value) => value instanceof Object;
 
+const _keyTypes = ['number', 'string', 'symbol'];
+
+/**
+ * @param {unknown} value
+ * @returns {value is number | string | symbol}
+ */
+isObject.key = (value) => _keyTypes.includes(typeof value);
+
 module.exports = isObject;
