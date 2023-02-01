@@ -25,13 +25,13 @@ is.defined = (value) => !is.undefined(value);
 
 /**
  * @param {unknown} value
- * @returns {value is null}
+ * @returns {value is null | undefined}
  */
 is.null = (value) => (value ?? null) === null;
 
 /**
  * @param {unknown} value
- * @returns {value is !null}
+ * @returns {value is !(null | undefined)}
  */
 is.notnull = (value) => !is.null(value);
 
