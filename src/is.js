@@ -49,6 +49,12 @@ is.date = (value) => value instanceof Date;
 
 /**
  * @param {unknown} value
+ * @returns {value is Date}
+ */
+is.date.valid = (value) => is.date(value) && !Number.isNaN(value.getTime());
+
+/**
+ * @param {unknown} value
  * @returns {value is Error}
  */
 is.error = (value) => value instanceof Error;

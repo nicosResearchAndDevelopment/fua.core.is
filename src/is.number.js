@@ -6,6 +6,12 @@ const isNumber = (value) => typeof value === 'number';
 
 /**
  * @param {unknown} value
+ * @returns {value is NaN}
+ */
+isNumber.nan = (value) => isNumber(value) && Number.isNaN(value);
+
+/**
+ * @param {unknown} value
  * @returns {value is number}
  */
 isNumber.float = (value) => isNumber(value) && !Number.isNaN(value);
