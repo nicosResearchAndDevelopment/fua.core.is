@@ -60,4 +60,10 @@ describe('fua.core.is', function () {
 
     });
 
+    describe('date', function () {
+
+        // TODO
+
+    });
+
 });

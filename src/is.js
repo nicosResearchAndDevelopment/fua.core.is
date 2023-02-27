@@ -10,6 +10,7 @@ is.function = require('./is.function.js');
 is.object = require('./is.object.js');
 is.array = require('./is.array.js');
 is.typedarray = require('./is.typedarray.js');
+is.date = require('./is.date.js');
 
 /**
  * @param {unknown} value
@@ -40,18 +41,6 @@ is.notnull = (value) => !is.null(value);
  * @returns {value is boolean | number | string}
  */
 is.primitive = (value) => is.boolean(value) || is.number(value) || is.string(value);
-
-/**
- * @param {unknown} value
- * @returns {value is Date}
- */
-is.date = (value) => value instanceof Date;
-
-/**
- * @param {unknown} value
- * @returns {value is Date}
- */
-is.date.valid = (value) => is.date(value) && !Number.isNaN(value.getTime());
 
 /**
  * @param {unknown} value
