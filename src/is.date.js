@@ -16,12 +16,12 @@ isDate.valid = (value) => isDate(value) && !Number.isNaN(value.getTime());
  */
 isDate.valid.value = (value) => typeof value === 'number' && value >= -8640000000000000 && value <= 8640000000000000;
 
-const dateStringRegex = /^(?:[+-]\d{2})?\d{4}-(?:0\d|1[012])-(?:[012]\d|3[01])(?:T(?:[01]\d|2[0123]):[012345]\d|:[012345]\d(?:\.\d+)?(?:Z|[+-])?(?:[01]\d|2[0123]):[012345]\d)?$/;
+const dateStringPattern = /^(?:[+-]\d{2})?\d{4}-(?:0\d|1[012])-(?:[012]\d|3[01])(?:T(?:[01]\d|2[0123]):[012345]\d|:[012345]\d(?:\.\d+)?(?:Z|[+-])?(?:[01]\d|2[0123]):[012345]\d)?$/;
 
 /**
  * @param {unknown} value
  * @returns {value is string}
  */
-isDate.valid.string = (value) => typeof value === 'string' && dateStringRegex.test(value);
+isDate.valid.string = (value) => typeof value === 'string' && dateStringPattern.test(value);
 
 module.exports = isDate;
