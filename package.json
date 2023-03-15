@@ -4,16 +4,16 @@
   "description": "",
   "_main": "src/is.js",
   "exports": {
-    ".": "src/is.js",
-    "./array": "src/is.array.js",
-    "./boolean": "src/is.boolean.js",
-    "./date": "src/is.date.js",
-    "./function": "src/is.function.js",
-    "./number": "src/is.number.js",
-    "./object": "src/is.object.js",
-    "./string": "src/is.string.js",
-    "./symbol": "src/is.symbol.js",
-    "./typedarray": "src/is.typedarray.js"
+    ".": "./src/is.js",
+    "./array": "./src/is.array.js",
+    "./boolean": "./src/is.boolean.js",
+    "./date": "./src/is.date.js",
+    "./function": "./src/is.function.js",
+    "./number": "./src/is.number.js",
+    "./object": "./src/is.object.js",
+    "./string": "./src/is.string.js",
+    "./symbol": "./src/is.symbol.js",
+    "./typedarray": "./src/is.typedarray.js"
   },
   "files": [
     "src/*"
