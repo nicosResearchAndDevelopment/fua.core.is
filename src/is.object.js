@@ -20,6 +20,12 @@ isObject.iterable = (value) => isObject(value) && typeof value[Symbol.iterator] 
  * @param {unknown} value
  * @returns {value is object}
  */
+isObject.native = (value) => isObject(value) && value.__proto__ === Object.prototype;
+
+/**
+ * @param {unknown} value
+ * @returns {value is object}
+ */
 isObject.instance = (value) => value instanceof Object;
 
 const _keyTypes = ['number', 'string', 'symbol'];
