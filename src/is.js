@@ -42,17 +42,5 @@ is.notnull = (value) => !is.null(value);
  */
 is.primitive = (value) => is.boolean(value) || is.number(value) || is.string(value);
 
-/**
- * @param {unknown} value
- * @returns {value is Error}
- */
-is.error = (value) => value instanceof Error;
-
-/**
- * @param {unknown} value
- * @returns {value is Buffer}
- */
-is.buffer = (value) => Buffer.isBuffer(value);
-
 util.sealModule(is);
 module.exports = is;
