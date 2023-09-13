@@ -58,28 +58,30 @@ isNumber.integer.positive = (value) => isNumber.integer(value) && value > 0;
  */
 isNumber.bigint = (value) => typeof value === 'bigint';
 
-/**
- * @param {unknown} value
- * @returns {value is bigint}
- */
-isNumber.bigint.negative = (value) => isNumber.bigint(value) && value < 0n;
+const _0n = BigInt(0);
 
 /**
  * @param {unknown} value
  * @returns {value is bigint}
  */
-isNumber.bigint.nonpositive = (value) => isNumber.bigint(value) && value <= 0n;
+isNumber.bigint.negative = (value) => isNumber.bigint(value) && value < _0n;
 
 /**
  * @param {unknown} value
  * @returns {value is bigint}
  */
-isNumber.bigint.nonnegative = (value) => isNumber.bigint(value) && value >= 0n;
+isNumber.bigint.nonpositive = (value) => isNumber.bigint(value) && value <= _0n;
 
 /**
  * @param {unknown} value
  * @returns {value is bigint}
  */
-isNumber.bigint.positive = (value) => isNumber.bigint(value) && value > 0n;
+isNumber.bigint.nonnegative = (value) => isNumber.bigint(value) && value >= _0n;
+
+/**
+ * @param {unknown} value
+ * @returns {value is bigint}
+ */
+isNumber.bigint.positive = (value) => isNumber.bigint(value) && value > _0n;
 
 module.exports = isNumber;
