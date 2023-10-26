@@ -1,16 +1,18 @@
 const
     util = require('./util.js'),
-    is = {};
+    is   = {};
 
-is.boolean = require('./is.boolean.js');
-is.number = require('./is.number.js');
-is.string = require('./is.string.js');
-is.symbol = require('./is.symbol.js');
-is.function = require('./is.function.js');
-is.object = require('./is.object.js');
-is.array = require('./is.array.js');
+is.validator = require('./is.validator.js');
+
+is.boolean    = require('./is.boolean.js');
+is.number     = require('./is.number.js');
+is.string     = require('./is.string.js');
+is.symbol     = require('./is.symbol.js');
+is.function   = require('./is.function.js');
+is.object     = require('./is.object.js');
+is.array      = require('./is.array.js');
 is.typedarray = require('./is.typedarray.js');
-is.date = require('./is.date.js');
+is.date       = require('./is.date.js');
 
 /**
  * @param {unknown} value
