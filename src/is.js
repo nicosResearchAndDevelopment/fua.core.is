@@ -3,6 +3,7 @@ const
     is   = {};
 
 is.validator = require('./is.validator.js');
+is.analyse   = require('./is.analyse.js');
 
 is.boolean    = require('./is.boolean.js');
 is.number     = require('./is.number.js');

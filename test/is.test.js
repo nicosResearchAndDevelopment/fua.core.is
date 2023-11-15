@@ -5,7 +5,7 @@ const
 
 describe('fua.core.is', function () {
 
-    test.only('develop', function () {
+    test('develop', function () {
         console.log(is);
         console.log(is.number.integer);
     });
