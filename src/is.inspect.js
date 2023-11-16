@@ -3,8 +3,8 @@
  * @param {any} value
  * @returns {string}
  */
-const isAnalyse = function (value) {
-    const datatype = isAnalyse.datatype(value);
+const isInspect = function (value) {
+    const datatype = isInspect.datatype(value);
     if (datatype !== 'object') return datatype;
 
     if (value === null) return 'null';
@@ -15,7 +15,7 @@ const isAnalyse = function (value) {
         if (value.size === 0) return 'Set';
         const entryTypes = new Set();
         for (let entry of value.values()) {
-            entryTypes.add(isAnalyse(entry));
+            entryTypes.add(isInspect(entry));
         }
         return 'Set<' + Array.from(entryTypes.values()).sort().join('|') + '>';
     }
@@ -24,8 +24,8 @@ const isAnalyse = function (value) {
         if (value.size === 0) return 'Map';
         const keyTypes = new Set(), entryTypes = new Set();
         for (let [key, entry] of value.entries()) {
-            keyTypes.add(isAnalyse(key));
-            entryTypes.add(isAnalyse(entry));
+            keyTypes.add(isInspect(key));
+            entryTypes.add(isInspect(entry));
         }
         return 'Map<' + Array.from(keyTypes.values()).sort().join('|') + ',' + Array.from(entryTypes.values()).sort().join('|') + '>';
     }
@@ -34,7 +34,7 @@ const isAnalyse = function (value) {
         if (value.length === 0) return 'Array';
         const entryTypes = new Set();
         for (let entry of value) {
-            entryTypes.add(isAnalyse(entry));
+            entryTypes.add(isInspect(entry));
         }
         return 'Array<' + Array.from(entryTypes.values()).sort().join('|') + '>';
     }
@@ -44,20 +44,20 @@ const isAnalyse = function (value) {
         if (entries.length === 0) return 'Object';
         const entryTypes = new Map();
         for (let [key, entry] of entries) {
-            entryTypes.set(key, isAnalyse(entry));
+            entryTypes.set(key, isInspect(entry));
         }
         return '{' + Array.from(entryTypes.entries()).map(([key, entry]) => key + ':' + entry).sort().join(',') + '}';
     }
 
-    return isAnalyse.class(value);
+    return isInspect.class(value);
 };
 
-isAnalyse.datatype = function (value) {
+isInspect.datatype = function (value) {
     return typeof value;
 };
 
-isAnalyse.class = function (value) {
+isInspect.class = function (value) {
     return value?.[Symbol.toStringTag] ?? value?.__proto__?.constructor?.name ?? (value ? 'Null' : null);
 };
 
-module.exports = isAnalyse;
+module.exports = isInspect;
