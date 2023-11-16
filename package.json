@@ -1,6 +1,6 @@
 {
   "name": "@nrd/fua.core.is",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "_main": "src/is.js",
   "exports": {
