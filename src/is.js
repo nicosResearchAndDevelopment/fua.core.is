@@ -1,9 +1,6 @@
-const
-    util = require('./util.js'),
-    is   = {};
+const is = {};
 
 is.validator = require('./is.validator.js');
-is.inspect   = require('./is.inspect.js');
 
 is.boolean    = require('./is.boolean.js');
 is.number     = require('./is.number.js');
@@ -45,5 +42,10 @@ is.notnull = (value) => !is.null(value);
  */
 is.primitive = (value) => is.boolean(value) || is.number(value) || is.string(value);
 
-util.sealModule(is);
+(function freeze(target) {
+    Object.freeze(target);
+    Object.values(target)
+        .filter(value => value instanceof Object)
+        .forEach(freeze);
+})(is);
 module.exports = is;
