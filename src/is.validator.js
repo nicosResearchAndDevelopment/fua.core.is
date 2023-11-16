@@ -16,7 +16,7 @@ isValidator.string = function (pattern) {
 
 isValidator.array = function (checker) {
     if (typeof checker !== 'function') throw new Error('invalid checker');
-    return (value) => Array.isArray(checker) && Array.prototype.every.call(value, checker);
+    return (value) => Array.isArray(value) && Array.prototype.every.call(value, checker);
 };
 
 isValidator.enum = function (choices) {
