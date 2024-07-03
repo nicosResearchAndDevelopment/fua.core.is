@@ -60,4 +60,10 @@ isObject.instance.set = (value) => value instanceof Set;
  */
 isObject.instance.map = (value) => value instanceof Map;
 
+/**
+ * @param {unknown} value
+ * @returns {value is RegExp}
+ */
+isObject.instance.regex = (value) => value instanceof RegExp;
+
 module.exports = isObject;
