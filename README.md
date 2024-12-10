@@ -1,1 +1,1 @@
-# @nrd/fua.core.is
+# fua.core.is

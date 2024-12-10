@@ -1,8 +1,7 @@
 {
-  "name": "@nrd/fua.core.is",
+  "name": "@nicosResearchAndDevelopment/fua.core.is",
   "version": "1.0.7",
   "description": "",
-  "_main": "src/is.js",
   "exports": {
     ".": "./src/is.js",
     "./array": "./src/is.array.js",
@@ -32,8 +31,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@git02.int.nsc.ag:10022/research/fua/core/is.git"
+    "url": "ssh://git@github.com:nicosResearchAndDevelopment/fua.core.is.git"
   },
-  "author": "spetrac@nicos-ag.com",
-  "license": "UNLICENSED"
+  "author": "Simon Petrac",
+  "license": "MIT"
 }
