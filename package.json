@@ -1,5 +1,5 @@
 {
-  "name": "@nicosResearchAndDevelopment/fua.core.is",
+  "name": "@fua/core.is",
   "version": "1.0.7",
   "description": "",
   "exports": {
@@ -33,6 +33,6 @@
     "type": "git",
     "url": "ssh://git@github.com:nicosResearchAndDevelopment/fua.core.is.git"
   },
-  "author": "Simon Petrac",
+  "author": "Simon Petrac <pfoerdie@gmail.com>",
   "license": "MIT"
 }
