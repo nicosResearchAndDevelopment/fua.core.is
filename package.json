@@ -1,7 +1,7 @@
 {
   "name": "@fua/core.is",
   "version": "1.0.7",
-  "description": "",
+  "description": "The \"is\" module offers methods to confirm the type of a value. It can be used to validate arguments, differentiate inputs or filter values.",
   "exports": {
     ".": "./src/is.js",
     "./array": "./src/is.array.js",
